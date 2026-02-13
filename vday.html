@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine?</title>
+    <style>
+       body {
+            margin: 0;
+            height: 100vh;
+            background: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-weight: normal;
+            margin-bottom: 40px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: #007BFF;
+            color: white;
+            margin-right: 20px;
+        }
+
+        #no {
+            background-color: #FF3B3B;
+            color: white;
+            position: fixed;
+        }
+
+        .buttons {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Willst du mein Date morgen sein? ❤️ (Weil wir feiern kein Valentinstag)</h1>
+    <img src="bild.jpeg" alt="Wir" width="300">
+
+    <div class="buttons">
+        <button id="yes" onclick="yesClicked()">Jaaa Aşkim ❤️ </button>
+        <button id="no" onclick="moveButton()">Neeee</button>
+    </div>
+
+    <script>
+        function yesClicked() {
+            document.body.innerHTML = "<h1>JAWOLLLLLLLL YUHUUUUUUUUUUUUU</h1>";
+        }
+
+        const noBtn = document.getElementById("no");
+
+    function moveButton() {
+  const maxX = window.innerWidth - 120;
+  const maxY = window.innerHeight - 60;
+
+  noBtn.style.left = Math.random() * maxX + "px";
+  noBtn.style.top = Math.random() * maxY + "px";
+}
+
+// Desktop Maus
+noBtn.addEventListener("mouseover", moveButton);
+
+// Handy Finger
+noBtn.addEventListener("touchstart", function(e){
+  e.preventDefault();
+  moveButton();
+});
+</script>
+
+
+</body>
+</html>
+
+
